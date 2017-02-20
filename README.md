@@ -34,10 +34,23 @@ Admins are people who would be maintaining the site and adjusting relations betw
 ## Security
 Admin logins need a protected password. I chose to use ActiveModel's has_secure_password because it is built into rails and there will probably be not many additional admin accounts to be created.
 
+Admin creation is also not handled through the web application. It is done on the backend.
+
 If a User model were to be created I would use devise to more adequately protect users and their passwords in the database.
 
 
 # Future Improvements
+After achieving MVP for this project there were definitely things that I could have done better.
+
+* Implementing a system that prevents showing from being created at the same time in the same auditorium.
+
+* Adding lengths of movies so that that variable could be used to prevent multiple showings in the same auditorium until a movie is completed
+
+* Stylizing the website
+
+* Adding a search bar to look for movies at all theater locations
 
 # Deployment Instructions
+```
 
+```
