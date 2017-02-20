@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create]
 
   resources :movies
-  resources :showings
-  resources :sales
+  resources :showings do
+    resources :sales
+  end
   resources :theaters do
     resources :auditoria
   end
