@@ -1,0 +1,19 @@
+<%= form_for @showing do |f| %>
+
+  <%= render 'errors', :thing => @showing %>
+  <p>
+    <%= f.label :time %><br>
+    <%= f.datetime_select :time, :ampm => true %>
+  </p>
+    <p>
+    <%= f.label :movie %><br>
+    <%= f.collection_select :movie_id, Movie.where(playing: true), :id, :title,include_blank: true %>
+  </p>
+  <p>
+    <%= f.label :auditorium %><br>
+    <%= f.collection_select :auditorium_id, Auditorium.all, :id, :auditorium_number, include_blank: true %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+ <% end %>

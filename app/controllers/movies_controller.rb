@@ -8,6 +8,10 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
   end
 
+  def new
+    @movie = Movie.new
+  end
+
   def create
     @movie = Movie.new(movie_params)
     if @movie.save
@@ -35,7 +39,7 @@ class MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:title)
+    params.require(:movie).permit(:title, :playing)
   end
 
 end

@@ -1,0 +1,15 @@
+<li>
+  <%= link_to "#{theater.name}", theater_path(theater)%>
+  <ul>
+    <% theater.auditoria.each do |auditorium|%>
+      <li>
+        <%= "Auditorium #{auditorium.auditorium_number}"%>
+      </li>
+      <ul>
+        <li>
+          <%= "Capacity: #{auditorium.seating_capacity}"%>
+        </li>
+      </ul>
+    <% end %>
+  </ul>
+</li>

@@ -1,0 +1,15 @@
+<%= form_for @movie do |f| %>
+
+  <%= render 'errors', :thing => @movie %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.hidden_field :playing, :value => true %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+ <% end %>

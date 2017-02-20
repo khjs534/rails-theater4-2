@@ -1,0 +1,19 @@
+<h1> <%= "#{@theater.name}" %> </h1>
+<ul>
+    <% @theater.auditoria.each do |auditorium|%>
+      <li>
+        <%= "Auditorium #{auditorium.auditorium_number}"%>
+      </li>
+      <ul>
+        <li>
+          <%= "Capacity: #{auditorium.seating_capacity}"%>
+        </li>
+      </ul>
+    <% end %>
+  </ul>
+
+<div>
+  <% if logged_in? %>
+    <%= link_to "Add Auditorium", new_theater_auditorium_path(@theater) %>
+  <% end %>
+</div>
