@@ -1,11 +1,11 @@
 class TheatersController < ApplicationController
+  before_action :find_theater, only: [:edit, :update,:show, :destroy]
 
   def index
     @theaters = Theater.all
   end
 
   def show
-    @theater = Theater.find(params[:id])
   end
 
   def new
@@ -21,9 +21,12 @@ class TheatersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
     if @theater.update_attributes(theater_params)
-      redirect to @theater
+      redirect_to @theater
     else
       render 'edit'
     end
@@ -39,6 +42,10 @@ class TheatersController < ApplicationController
 
   def theater_params
     params.require(:theater).permit(:name)
+  end
+
+  def find_theater
+    @theater = Theater.find(params[:id])
   end
 
 end
