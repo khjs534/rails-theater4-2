@@ -1,0 +1,10 @@
+<li>
+  <%= link_to "#{movie.title}", movie_path(movie)%>
+  <ul>
+    <% movie.showings.each do |showing|%>
+      <li>
+        <%= link_to "#{showing.time}", showing_path(showing)%>
+      </li>
+    <% end %>
+  </ul>
+</li>

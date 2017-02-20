@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>RailsTheater42</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>RailsTheater</title>
+    <%= csrf_meta_tags %>
 
-<%= yield %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-</body>
+  <body>
+    <h1>Welcome to Rails Theater</h1>
+
+     <div>
+      <% if logged_in? %>
+        <nav>
+          <%= link_to 'Home', root_path %>
+          <%= link_to 'Logout', logout_path , method: "delete"  %>
+          <%= link_to 'Theaters', theaters_path %>
+        </nav>
+      <% else %>
+        <nav>
+          <%= link_to 'Home', root_path %>
+          <%= link_to 'Login', new_session_path %>
+          <%= link_to 'Theaters', theaters_path %>
+        </nav>
+      <% end %>
+    </div>
+    <%= yield %>
+  </body>
 </html>

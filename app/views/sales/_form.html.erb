@@ -1,0 +1,11 @@
+<%= form_for @sale do |f| %>
+  <%= render 'errors', :thing => @sale %>
+  <p>
+    <%= f.label :customer_name%>
+    <%= f.text_field :customer_name%>
+  </p>
+  <p>
+    <%= f.label :customer_email%>
+    <%= f.text_field :customer_email%>
+  </p>
+<% end %>

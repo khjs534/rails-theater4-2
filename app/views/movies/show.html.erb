@@ -1,0 +1,10 @@
+<h1> <%= @movie.title %> </h1>
+<ul>
+  <% @movie.showings.each do |showing| %>
+    <li>
+      <%= link_to "#{showing.time}", showing_path(showing) %>
+    </li>
+    <% end %>
+</ul>
+
+
