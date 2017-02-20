@@ -1,4 +1,8 @@
 <h1> <%= "#{@theater.name}" %> </h1>
+  <% if logged_in? %>
+    <%= link_to "Edit Theater Name", edit_theater_path(@theater) %>
+    <%= link_to "Delete Theater", theater_path(@theater), method: :delete %>
+  <% end %>
 <ul>
     <% @theater.auditoria.each do |auditorium|%>
       <li>
@@ -9,6 +13,10 @@
           <%= "Capacity: #{auditorium.seating_capacity}"%>
         </li>
       </ul>
+      <% if logged_in? %>
+        <%= link_to "Edit Auditorium", edit_theater_auditorium_path(@theater,auditorium) %>
+        <%= link_to "Delete Theater", theater_auditorium_path(@theater,auditorium), method: :delete %>
+      <% end %>
     <% end %>
   </ul>
 

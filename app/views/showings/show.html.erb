@@ -1,5 +1,9 @@
 <h1> <%= @showing.movie.title %> </h1>
 
 <h3> Auditorium <%= @showing.auditorium.auditorium_number %> @ <%= @showing.time %> </h3>
-
+<% if logged_in? %>
+  <%= link_to "Edit Showing", edit_showing_path(@showing) %>
+  <%= link_to "Delete Showing", showing_path(@showing), method: :delete%>
+<% end %>
 <%= render "/sales/form" %>
+

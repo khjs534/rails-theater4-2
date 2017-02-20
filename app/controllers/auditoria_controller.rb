@@ -1,4 +1,6 @@
 class AuditoriaController < ApplicationController
+  before_action :find_auditorium, only: [:edit, :update, :destroy]
+
   def new
     @theater = Theater.find(params[:theater_id])
     @auditorium = Auditorium.new
@@ -12,6 +14,10 @@ class AuditoriaController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def edit
+    @theater = Theater.find(params[:theater_id])
   end
 
   def update
@@ -32,5 +38,9 @@ class AuditoriaController < ApplicationController
 
   def auditorium_params
     params.require(:auditorium).permit(:auditorium_number, :seating_capacity, :theater_id)
+  end
+
+  def find_auditorium
+    @auditorium = Auditorium.find(params[:id])
   end
 end

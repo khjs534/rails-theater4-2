@@ -1,11 +1,11 @@
 class MoviesController < ApplicationController
-
+  before_action :find_movie, only: [:edit, :update, :show, :destroy]
   def index
     @movies = Movie.where(playing: true)
   end
 
   def show
-    @movie = Movie.find(params[:id])
+
   end
 
   def new
@@ -19,6 +19,9 @@ class MoviesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def edit
   end
 
   def update
@@ -40,6 +43,10 @@ class MoviesController < ApplicationController
 
   def movie_params
     params.require(:movie).permit(:title, :playing)
+  end
+
+  def find_movie
+    @movie = Movie.find(params[:id])
   end
 
 end
