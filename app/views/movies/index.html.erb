@@ -1,0 +1,12 @@
+
+<div>
+  <ul>
+    <%= render @movies || "There are currently no movies playing =[" %>
+  </ul>
+</div>
+<div>
+  <% if logged_in? %>
+    <%= link_to "Add Movies", new_movie_path %>
+    <%= link_to "Add Showings", new_showing_path %>
+  <% end %>
+</div>

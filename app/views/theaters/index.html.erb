@@ -1,0 +1,11 @@
+<div>
+  <ul>
+    <%= render @theaters || "There are currently no theaters available =[" %>
+  </ul>
+</div>
+
+<div>
+  <% if logged_in?%>
+    <%= link_to "Add Theater", new_theater_path %>
+  <% end %>
+</div>

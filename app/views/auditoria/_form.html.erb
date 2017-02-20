@@ -1,0 +1,16 @@
+<%= form_for [@theater, @auditorium] do |f| %>
+
+  <%= render 'errors', :thing => @auditorium %>
+  <p>
+    <%= f.label :auditorium_number %><br>
+    <%= f.text_field :auditorium_number %>
+  </p>
+  <p>
+    <%= f.label :seating_capacity %><br>
+    <%= f.text_field :seating_capacity %>
+  </p>
+  <%= f.hidden_field :theater_id, :value => @theater.id %>
+  <p>
+    <%= f.submit %>
+  </p>
+ <% end %>

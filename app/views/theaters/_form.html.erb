@@ -1,0 +1,11 @@
+<%= form_for @theater do |f| %>
+
+  <%= render 'errors', :thing => @theater %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+ <% end %>
