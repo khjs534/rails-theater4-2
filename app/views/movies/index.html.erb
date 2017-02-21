@@ -1,8 +1,10 @@
 
-<div>
-  <ul>
-    <%= render @movies || "There are currently no movies playing =[" %>
-  </ul>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <ul>
+      <%= render @movies || "There are currently no movies playing =[" %>
+    </ul>
+  </div>
 </div>
 <div>
   <% if logged_in? %>
