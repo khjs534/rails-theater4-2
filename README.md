@@ -1,4 +1,4 @@
-# rails-theater4-2# Rails Theater
+# Rails Theater
 Allow users to check movie times and buy tickets to the movies.
 
 Allow managers to manage auditoriums, movie times, and keep track of sales.
@@ -29,6 +29,8 @@ Showings is a showing of a movie in a specific auditorium and at a specific time
 
 Sales are used to see available seating and for sales data that management might want to see.
 
+* Note that in an actual use case sales would take the customers credit card number data and expiration date. I just omitted it so the site didn't pose a security risk for users.
+
 Admins are people who would be maintaining the site and adjusting relations between showings, movies, and auditoriums.
 
 ## Security
@@ -56,8 +58,16 @@ After achieving MVP for this project there were definitely things that I could h
 
 * Add filtering to the sales history section
 
+* The mailer isn't working correctly
+
 
 # Deployment Instructions
 ```
-
+git clone https://github.com/khjs534/rails-theater4-2.git
+cd rails-theater4-2
+bundle install
+rake db:create
+rake db:migrate
+rake db:seed
+rails s
 ```
