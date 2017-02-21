@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   delete "/logout" => "sessions#destroy"
+  get "/saleshistory" => "sales#index"
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

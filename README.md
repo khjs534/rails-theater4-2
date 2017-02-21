@@ -50,6 +50,12 @@ After achieving MVP for this project there were definitely things that I could h
 
 * Adding a search bar to look for movies at all theater locations
 
+* Writing tests for the controllers
+
+* Add protected sales history requirement
+
+* Add filtering to the sales history section
+
 # Deployment Instructions
 ```
 
