@@ -56,6 +56,7 @@ After achieving MVP for this project there were definitely things that I could h
 
 * Add filtering to the sales history section
 
+
 # Deployment Instructions
 ```
 
